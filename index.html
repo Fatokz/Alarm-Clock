@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="alarm.png" type="image/x-icon">
+    <title>Alarm</title>
+</head>
+
+<body>
+    <main>
+        <div id="main">
+            <div id="clock">
+                <img src="alarm.png" alt="">
+            </div>
+            <div id="flex">
+                <h1 id="hour">00 : 00 : 00</h1>
+                <!-- <h1 id="minute">00</h1> -->
+                <!-- <h1 id="second">00</h1> -->
+            </div>
+            <select id="select">
+                <option value="">Hour</option>
+            </select>
+           <select id="select2"> 
+            <option value="">Minute</option>
+           </select>
+           <button onclick="setAlarm()">Set Alarm</button>
+        </div>
+    </main>
+</body>
+
+</html>
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/6f0fae15cd.js" crossorigin="anonymous"></script>
