@@ -4,7 +4,7 @@
 }
 
 body {
-    background: aliceblue;
+    background: #4a98f7;
     font-family:serif;
 }
 
@@ -24,7 +24,7 @@ body {
     height: 30px;
     width: 100%;
     text-align: center;
-    margin: auto;
+    /* margin: auto; */
     /* background-color: red; */
 }
 
@@ -70,6 +70,8 @@ select{
     height: 40px;
     border: none;
     cursor: pointer;
-    background-color: lightskyblue;
+    background-color: #4a98f7;
+    color: white;
+    font-size: 20px;
     border-radius: 7px;
 }
