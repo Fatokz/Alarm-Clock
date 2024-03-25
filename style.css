@@ -19,10 +19,13 @@ body {
 }
 
 #clock{
-    
+    height: 160px;
+    width: 160px;
+    margin: auto;
 }
 
 #clock img{
     height: 160px;
     width: 160px;
+    margin: auto;
 }
