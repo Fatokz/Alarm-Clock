@@ -1,5 +1,6 @@
 let select = document.getElementById('select')
 let select2 = document.getElementById('select2')
+let select3 = document.getElementById('select3')
 
 // let hour = document.getElementById("hour")
 // let minute = document.getElementById("minute")
@@ -12,6 +13,9 @@ for (let index = 0; index <= 23; index++) {
 for (let index = 0; index <= 60; index++) {
     select2.innerHTML += `<option value="${index}"> ${index} </option>`
 }
+ for (let index = 0; index < index; index++) {
+    select3.innerHTML = `<option value="${index}"> ${index} </option>`
+ }
 
 
 // setInterval(() => {
@@ -36,6 +40,7 @@ date = new Date()
 setInterval(() => {
     date = new Date()
     hour.innerHTML = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`
+
 }, 1000);
 
 function setAlarm() {

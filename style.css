@@ -12,10 +12,33 @@ body {
     height: 320px;
     width: 25em;
     background: white;
+    /* padding: 15px; */
     margin: auto;
     margin-top: 10%;
     border-radius: 6px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#timer{
+    height: 30px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    /* background-color: red; */
+}
+
+#time{
+    height: 30px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+select{
+    height: 40px;
+    width: 50%;
+    margin-top: 15px;
 }
 
 #clock{
@@ -25,7 +48,24 @@ body {
 }
 
 #clock img{
-    height: 160px;
-    width: 160px;
-    margin: auto;
+    /* margin: auto; */
+    height: 140px;
+    width: 140px;
+    margin-top: 20px;
+}
+
+#set{
+    margin: 34px 0 0 20px;
+    width: 100%;
+    /* margin-top: 30px; */
+    height: 40px;
+}
+
+#set button{
+    width: 90%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: lightskyblue;
+    border-radius: 7px;
 }
