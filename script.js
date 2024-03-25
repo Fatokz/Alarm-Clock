@@ -13,9 +13,6 @@ for (let index = 0; index <= 23; index++) {
 for (let index = 0; index <= 60; index++) {
     select2.innerHTML += `<option value="${index}"> ${index} </option>`
 }
- for (let index = 0; index < index; index++) {
-    select3.innerHTML = `<option value="${index}"> ${index} </option>`
- }
 
 
 // setInterval(() => {
@@ -39,7 +36,7 @@ for (let index = 0; index <= 60; index++) {
 date = new Date()
 setInterval(() => {
     date = new Date()
-    hour.innerHTML = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`
+    hour.innerHTML = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()} ${select3.value}`
 
 }, 1000);
 
