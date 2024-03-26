@@ -17,7 +17,7 @@ function setAlarm() {
     date = new Date()
     hour.innerHTML = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()} ${select3.value}`
 
-    if (select.value == '' && select2.value == '')  {
+    if (select.value == '' && select2.value == '') {
         alert("Set an alarm")
     }
 }
@@ -31,3 +31,7 @@ setInterval(() => {
     }
 
 }, 1000);
+
+function stopAlarm() {
+    audioo.pause();
+}

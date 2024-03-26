@@ -23,6 +23,7 @@ body {
     height: 30px;
     width: 100%;
     text-align: center;
+    font-size: 25px;
 }
 
 #time{
@@ -60,7 +61,7 @@ select{
 }
 
 #set button{
-    width: 90%;
+    width: 45%;
     height: 40px;
     border: none;
     cursor: pointer;
