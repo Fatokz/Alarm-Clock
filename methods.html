@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div id="screen"></div>
+    </main>
+    <main>
+        <h1>Alarm clock</h1>
+        <div id="displayTime"></div>
+        <label for="">Select Hr</label>
+        <select name="" id="selHr">
+        </select>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label for="">Select Min</label>
+        <select name="" id="selMin">
+            
+        </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <button id="set" onclick="setAlarm()">Set Alarm</button>
+        <button id="stop" onclick="stopAlarm()">Stop Alarm</button>
+    </main>
+</body>
+
+</html>
+
+<script>
+    let set = document.getElementById('set')
+    let stop = document.getElementById('stop')
+    let selHr = document.getElementById('selHr')
+    let selMin = document.getElementById('selMin');
+    let displayTime = document.getElementById("displayTime")
+    let audio = new Audio('uu.mp3');
+   
+    stop.style.display = "none"
+    setInterval(()=>{
+        let date = new Date();
+        displayTime.innerHTML = `<h1>${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}
+            ${date.getHours() > 12? "PM": "AM"}
+            `
+    },1000)
+
+    for(let i = 1; i <= 12; i++){
+        selHr.innerHTML += `<option value="${i}">${i}</option>`
+    }
+    for(let i = 0; i < 60; i++){
+        selMin.innerHTML += `<option value="${i}">${i.toString().length < 2? '0'+i :i}</option>`
+    }
+
+    function setAlarm(){
+        let date = new Date();
+        // LOGICAL OPERATORS
+        if(selHr.value < date.getHours()){
+            alert("Invalid Alarm")
+            return
+        }else{
+            alert("An alarm has been set")
+        }
+    }
+    let myAlarm = setInterval(()=>{
+        let date = new Date();
+        if(date.getHours() == selHr.value && date.getMinutes() == selMin.value){
+            audio.play()
+            stop.style.display = "initial"
+            set.style.display = "none"
+        }
+    },1000)
+
+    function stopAlarm(){
+        clearInterval(myAlarm)
+        audio.pause()
+        stop.style.display = "none"
+        set.style.display = "initial"
+    }
+    // map foreach filter find
+    // array of object
+    // callback function
+    let screen = document.getElementById("screen")
+    let names = ['Sam', 'Dan', 'Vic', 'Tunde', 'Dan', 'Sam'];
+    let arrObj = [
+        { img: "", firstname: "Dyno", lastname: "", email: "", age: 5, gender: "", nationality: "", skinColor: "", phone: "" },
+        { name: "Tout", age: 7 },
+        { name: "Celeb", age: 11 },
+        { name: "One more", age: 12 }
+    ];
+    console.log(arrObj);
+    console.log(arrObj[2].name, arrObj[2].age);
+    console.log(arrObj[2].age);
+
+    function sennd() {
+        let formData = new FormData();
+
+        formData.append("username", "");
+        fetch("http://localhost:8888/todo/data.php", {
+            method: "POST",
+            body: formData
+        }).then((res) => res.text()).then((data) => {
+            console.log(data);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+
+    sennd()
+    // for(let i = 0; i < names.length; i++){
+    //     let el = names[i];
+    //     screen.innerHTML += `<h1>${el}</h1>`
+    // }
+
+    // names.map((dan, i)=>{
+    //     screen.innerHTML += `<h1>${i}. ${dan}</h1>`
+    // })
+
+    names.map(function (el, i) {
+        screen.innerHTML += `<h1>${i}. ${el}</h1>`
+    })
+    // let filtered = names.filter(el => el == "Dan");
+    // console.log(filtered);
+    let dd = []
+    for (let i = 0; i < names.length; i++) {
+        let el = names[i];
+        if (el == "Dan") {
+            dd.push(el);
+            console.log(dd);
+        }
+    }
+    let seen = names.find(el => el == "Dan");
+    console.log(seen);
+</script>

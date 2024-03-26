@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Airtime Generator</h1>
+        <div>
+            <select id="network">
+                <option value="">Select a network provider</option>
+                <option value="MTN">MTN</option>
+                <option value="GILO">GILO</option>
+                <option value="AIRTEL">AIRTEL</option>
+                <option value="9MOBILE">9MOBILE</option>
+            </select>
+            <select id="amount">
+                <option value="">Select an amont</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+            </select>
+            <button onclick="generateAirtime()">Generate Airtime</button>
+            <h1 id="dispPin"></h1>
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    let network = document.getElementById('network');
+    let amount = document.getElementById('amount');
+    let dispPin = document.getElementById('dispPin');
+    let pin = "";
+    let allPins = []
+    function generateAirtime(){
+        if(network.value == ""){
+            alert("Select a network")
+        }else if(amount.value == ""){
+            alert("Select an amount")
+        }else{
+            for(let i = 0; i < 10; i++){
+                let rand = Math.floor(Math.random() * 10);
+                pin += rand;
+            }
+            console.log(pin);
+            dispPin.innerHTML = `You have generated an ${network.value} card of #${amount.value}`
+            let obj = {
+                network: network.value,
+                amount: amount.value,
+                pin: pin,
+                date: "",
+                isUsed: false
+            }
+            allPins.push(obj);
+            console.log(allPins);
+        }
+    }
+</script>
