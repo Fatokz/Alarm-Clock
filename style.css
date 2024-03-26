@@ -13,7 +13,6 @@ body {
     height: 320px;
     width: 25em;
     background: white;
-    /* padding: 15px; */
     margin: auto;
     margin-top: 10%;
     border-radius: 6px;
@@ -24,8 +23,6 @@ body {
     height: 30px;
     width: 100%;
     text-align: center;
-    /* margin: auto; */
-    /* background-color: red; */
 }
 
 #time{
@@ -33,7 +30,6 @@ body {
     width: 90%;
     margin: auto;
     display: flex;
-    /* background-color: red; */
     gap: 10px;
 }
 
@@ -52,7 +48,6 @@ select{
 }
 
 #clock img{
-    /* margin: auto; */
     height: 140px;
     width: 140px;
     margin-top: 20px;
@@ -61,7 +56,6 @@ select{
 #set{
     margin: 0px 0 0 20px;
     width: 100%;
-    /* margin-top: 30px; */
     height: 40px;
 }
 
