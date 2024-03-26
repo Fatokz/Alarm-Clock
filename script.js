@@ -33,5 +33,6 @@ setInterval(() => {
 }, 1000);
 
 function stopAlarm() {
+    let audioo = document.getElementById("audioo")
     audioo.pause();
 }
